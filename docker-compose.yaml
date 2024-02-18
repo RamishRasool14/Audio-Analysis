@@ -1,0 +1,21 @@
+version: "3.4"
+services:
+  app:
+    build: .
+    ports:
+      - 8501:8501
+    environment:
+      - HF_API_KEY=${HF_API_KEY}
+      - WHISPER_MODEL=tiny # tiny, base, small, medium, large
+    volumes:
+      - ~/.cache/whisper:/root/.cache/whisper
+      - ~/.cache/huggingface:/root/.cache/huggingface
+
+    # comment out the following lines if you don't have/want to use GPU
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]

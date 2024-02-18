@@ -1,10 +1,14 @@
+import os
+import logging
+logging.basicConfig(level=logging.INFO)
+
 import whisper
 
-print("Loading whisper model...")
+logging.info(f"""Loading whisper model '{os.environ.get("WHISPER_MODEL")}'...""")
 
-model = whisper.load_model("large")
+model = whisper.load_model(os.environ.get("WHISPER_MODEL"))
 
-print("Whisper model loaded successfully\n")
+logging.info("Whisper model loaded successfully\n")
 
 def transcribe(path):
     transcript = model.transcribe(path)
