@@ -1,6 +1,4 @@
-# Audio Sentiment Analysis App
-
-<img src="preview.png" width="70%">
+<img src="preview.png" width="100%">
 
 ## Overview
 
@@ -15,6 +13,13 @@ This project is an Audio Sentiment Analysis App developed using Streamlit, which
 - **Translation**: Users can choose from a variety of languages for translation of the transcribed text.
 
 ## Usage from Web App
+
+Clone the project:
+
+```bash
+git clone https://github.com/RamishRasool14/Audio-Analysis
+cd Audio-Analysis
+```
 
 1. Build using docker compose. Add your HF_API_KEY in docker compose. Get from Hugging Face for free [here]("https://huggingface.co/docs/api-inference/en/quicktour"). Comment out the `deploy` section if you don't have/want to use GPU.
 ```bash
@@ -39,5 +44,6 @@ python3 cli.py --audio_path path-to-audio-file --type type-of-analysis --target 
 
 - Streamlit: Web app framework for creating interactive user interfaces.
 - Pydub: Audio processing library for handling audio files.
+- FFmpeg: Multimedia framework for handling audio and video files.
 
 Feel free to explore and enhance the functionality of the Audio Sentiment Analysis App according to your requirements!
